@@ -1,0 +1,42 @@
+    {
+      "name": "<YOURNAME>-TMS Example",
+      "description": "<YOURNAME>-TMS Example",
+      "applicationId": "CASES",
+      "formViews": [
+        {
+          "viewType": "EDIT",
+          "htmlView": "<div class=\"create-template test-class-2\"><div style=\"padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px\"><div class=\"flex flex--row\"><div class=\"flex__item\"><div style=\"margin-right:20px; width:33%\" class=\"btn-group\" id=\"e003\" uib-dropdown><label for=\"e003\"></label><button style=\"width:100%;text-align: left;height:32px;position:relative;padding-left:5px;\" class=\"btn dropdown-toggle\" uib-dropdown-toggle></button><ul style=\"margin-left: 0; width: 100%;\" role=\"menu\" class=\"dropdown-menu form-dropdown-list\" uib-dropdown-menu><li style=\"font-size: 14px; border-top: 1px solid lightgray; min-height:2em;\" role=\"menuitem\" class=\"form-dropdown-list-item\">{{o}}</li></ul></div></div></div><div class=\"flex flex--row\"><div class=\"flex__item\"><div style=\"margin-right:20px; width:33%\" class=\"btn-group\" id=\"e004\" uib-dropdown><label for=\"e004\"></label><button style=\"width:100%;text-align: left;height:32px;position:relative;padding-left:5px;\" class=\"btn dropdown-toggle\" uib-dropdown-toggle></button><ul style=\"margin-left: 0; width: 100%;\" role=\"menu\" class=\"dropdown-menu form-dropdown-list\" uib-dropdown-menu><li style=\"font-size: 14px; border-top: 1px solid lightgray; min-height:2em;\" role=\"menuitem\" class=\"form-dropdown-list-item\">{{o}}</li></ul></div></div></div></div></div>"
+        }
+      ],
+      "fields": [
+        {
+          "name": "Priority",
+          "fieldType": "UIB_DROP_DOWN",
+          "fieldValueType": "TEXT",
+          "fieldLabel": "Priority",
+          "defaultValue": "At First Opportunity",
+          "htmlElementId": "e003",
+          "fieldConfiguration": "{\"POSSIBLE_VALUES\":[ \"At First Opportunity\",\"At Next Part Exposure\",\"Immediately (Stop Required)\",\"NULL\"]}",
+          "configurationMap": {
+            "POSSIBLE_VALUES": [
+              "At First Opportunity","At Next Part Exposure","Immediately (Stop Required)","NULL"
+            ]
+          }
+        },
+        {
+          "name": "Anomaly category",
+          "fieldType": "UIB_DROP_DOWN",
+          "fieldValueType": "TEXT",
+          "fieldLabel": "Anomaly category",
+          "defaultValue": "Rotordyn./Vib.",
+          "htmlElementId": "e004",
+          "fieldConfiguration": "{\"POSSIBLE_VALUES\":[\"Rotordyn./Vib.\",\"Performance\",\"Encl. Temp.\", \"Instr. Failure\",\"Data Quality\",\"Control Logic\",\"Auxiliary\",\"Lubrication\",\"Combustion\",\"Dry Gas Seals\",\"Actuation/Mechanical\",\"Leakages\",\"Filters\",\"Other\"]}",
+          "configurationMap": {
+            "POSSIBLE_VALUES": ["Rotordyn./Vib.","Performance","Encl. Temp.","Instr. Failure","Data Quality","Control Logic","Auxiliary","Lubrication",
+              "Combustion","Dry Gas Seals","Actuation/Mechanical","Leakages","Filters","Other"
+            ]
+          }
+        }
+      ],
+      "formType": "TEMPLATE"
+    }

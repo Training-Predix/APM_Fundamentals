@@ -1,0 +1,744 @@
+{
+  "classifications": [
+    {
+      "id": "TRUCK-MANUFACTURER",
+      "name": "TRUCK MANUFACTURER",
+      "description": "TRUCK MANUFACTURER COMPANY",
+      "ccomClass": "ENTERPRISE_TYPE"
+    },
+    {
+      "id": "<YOURNAME>-TRUCK-PLANT",
+      "name": "<YOURNAME>-TRUCK PLANT",
+      "description": "PLANT",
+      "ccomClass": "SITE_TYPE"
+    },
+    {
+      "id": "<YOURNAME>-MODEL-LINE",
+      "name": "<YOURNAME>-MODEL LINE",
+      "description": "MANUFACTURING LINE THAT MAKES A SPECIFC TRUCK",
+      "ccomClass": "SEGMENT_TYPE"
+    },
+    {
+      "id": "<YOURNAME>-DIESEL-TRUCK-CLASS",
+      "name": "<YOURNAME>-DIESEL-TRUCK-CLASS",
+      "description": "PARENT TRUCK",
+      "ccomClass": "ASSET_TYPE"
+    },
+    {
+      "id": "TYPE-A-TRUCK",
+      "name": "TRUCK MODEL A",
+      "description": "MODEL A TRUCK TYPE",
+      "ccomClass": "ASSET_TYPE",
+      "parent": "<YOURNAME>-DIESEL-TRUCK-CLASS"
+    },
+    {
+      "id": "<YOURNAME>-TYPE-B-TRUCK",
+      "name": "<YOURNAME>-TRUCK MODEL B",
+      "description": "MODEL B TRUCK TYPE",
+      "ccomClass": "ASSET_TYPE",
+      "parent": "<YOURNAME>-DIESEL-TRUCK-CLASS"
+    }
+  ],
+  "instances": [
+    {
+      "id": "GREEN-MACK-TRUCKS",
+      "name": "GREEN MACK TRUCK COMPANY",
+      "description": "",
+      "classification": "TRUCK-MANUFACTURER",
+      "properties": [],
+      "ccomClass": "ENTERPRISE"
+    },
+    {
+      "id": "<YOURNAME>-OHIO-PLANT",
+      "name": "<YOURNAME>-TOLEDO PLANT",
+      "description": "MACK TRUCK PLANT TOLEDO",
+      "classification": "<YOURNAME>-TRUCK-PLANT",
+      "ccomClass": "SITE"
+    },
+        {
+      "id": "<YOURNAME>-MAINTENANCE-YARD",
+      "name": "<YOURNAME>-MAINTENANCE-YARD",
+      "description": "MACK TRUCK MAINTENANCE YARD",
+      "classification": "<YOURNAME>-TRUCK-PLANT",
+      "ccomClass": "SITE"
+    },
+        {
+      "id": "<YOURNAME>-SEMITRUCK-LINE",
+      "name": "<YOURNAME>-SEMITRUCK-LINE",
+      "description": "MACK TRUCK PLANT TOLEDO",
+      "classification": "<YOURNAME>-MODEL-LINE",
+      "ccomClass": "SEGMENT"
+    },
+    {
+      "id": "<YOURNAME>-DAYCAB-01",
+      "name": "<YOURNAME>-DAYCAB-01",
+      "description": "",
+      "classification": "TYPE-A-TRUCK",
+      "ccomClass": "ASSET",
+      "properties": [
+        {
+          "id": "position",
+          "type": "string",
+          "value": [
+            "701"
+          ]
+        },
+        {
+          "id": "MODEL-NUMBER",
+          "type": "string",
+          "value": [
+            "A2345"
+          ]
+        }
+      ]
+    },
+        {
+      "id": "<YOURNAME>-NIGHTSLEEPER-01",
+      "name": "<YOURNAME>-NIGHTSLEEPER-01",
+      "description": "",
+      "classification": "TYPE-A-TRUCK",
+      "ccomClass": "ASSET",
+      "properties": [
+        {
+          "id": "position",
+          "type": "string",
+          "value": [
+            "701"
+          ]
+        },
+        {
+          "id": "MODEL-NUMBER",
+          "type": "string",
+          "value": [
+            "A8765"
+          ]
+        }
+      ]
+    }
+  ],
+  "tagClassifications": [
+    {
+      "id": "TEMPERATURE",
+      "name": "TEMPERATURE",
+      "description": "This is TEMPERATURE Classification",
+      "reservedProperties": {
+        "uom": "Fahrenheit",
+        "dataType": "Double",
+        "resolution": ""
+      }
+    },
+    {
+      "id": "HYDRAULIC",
+      "name": "HYDRAULIC",
+      "description": "This is HYDRAULIC Classification",
+      "reservedProperties": {
+        "uom": "KPa",
+        "dataType": "Double",
+        "resolution": ""
+      }
+    },
+    {
+      "id": "TIRE-PRESSURE",
+      "name": "TIRE-PRESSURE",
+      "description": "This is TIRE-PRESSURE Classification",
+      "reservedProperties": {
+        "uom": "KPa",
+        "dataType": "Double",
+        "resolution": ""
+      }
+    },
+    {
+      "id": "FUEL-LEVEL",
+      "name": "FUEL-LEVEL",
+      "description": "This is FUEL-LEVEL Classification",
+      "reservedProperties": {
+        "uom": "gal",
+        "dataType": "Double",
+        "resolution": ""
+      }
+    },
+        {
+      "id": "AMPLITUDE",
+      "name": "AMPLITUDE",
+      "description": "This is AMPLITUDE Classification",
+      "reservedProperties": {
+        "uom": "Amps",
+        "dataType": "Double",
+        "resolution": ""
+      }
+    },
+      {
+      "id": "DIRECTION",
+      "name": "DIRECTION",
+      "description": "This is DIRECTION Classification",
+      "reservedProperties": {
+        "uom": "Degree",
+        "dataType": "Double",
+        "resolution": ""
+      }
+    },
+     {
+      "id": "PHASE",
+      "name": "PHASE",
+      "description": "This is PHASE Classification",
+      "reservedProperties": {
+        "uom": "Celsius",
+        "dataType": "Double",
+        "resolution": ""
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": {
+        "id": "<YOURNAME>-OHIO-PLANT",
+        "ccomClass": "SITE"
+      },
+      "to": [
+        {
+          "id": "GREEN-MACK-TRUCKS",
+          "ccomClass": "ENTERPRISE",
+          "type": "parent"
+        }
+      ]
+    },
+        {
+      "from": {
+        "id": "<YOURNAME>-MAINTENANCE-YARD",
+        "ccomClass": "SITE"
+      },
+      "to": [
+        {
+          "id": "GREEN-MACK-TRUCKS",
+          "ccomClass": "ENTERPRISE",
+          "type": "parent"
+        }
+      ]
+    },
+     {
+      "from": {
+        "id": "<YOURNAME>-SEMITRUCK-LINE",
+        "ccomClass": "SEGMENT"
+      },
+      "to": [
+        {
+          "id": "<YOURNAME>-OHIO-PLANT",
+          "ccomClass": "SITE",
+          "type": "parent"
+        }
+      ]
+    },
+        {
+      "from": {
+        "id": "<YOURNAME>-DAYCAB-01",
+        "ccomClass": "ASSET"
+      },
+      "to": [
+        {
+          "id": "<YOURNAME>-SEMITRUCK-LINE",
+          "ccomClass": "SEGMENT",
+          "type": "parent"
+        }
+      ]
+    },
+    {
+      "from": {
+        "id": "<YOURNAME>-NIGHTSLEEPER-01",
+        "ccomClass": "ASSET"
+      },
+      "to": [
+        {
+          "id": "<YOURNAME>-SEMITRUCK-LINE",
+          "ccomClass": "SEGMENT",
+          "type": "parent"
+        }
+      ]
+    }
+  ],
+
+  
+  "tagAssociations": [
+    {
+      "monitoredEntity": {
+        "id": "<YOURNAME>-DAYCAB-01",
+        "ccomClass": "ASSET"
+      },
+      "tags": [
+        {
+          "name": "COOLANTTEMP",
+          "id": "<YOURNAME>-DAYCAB-01.COOLANTTEMP",
+          "description": "ENGINETEMP",
+          "classification": "TEMPERATURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Fahrenheit",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "TIRE-PRESSURE-FR",
+          "id": "<YOURNAME>-DAYCAB-01.TIRE-PRESSURE-FR",
+          "description": "TIRE-PRESSURE CAB FR",
+          "classification": "TIRE-PRESSURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "KPa",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "TIRE-PRESSURE-FL",
+          "id": "<YOURNAME>-DAYCAB-01.TIRE-PRESSURE-FL",
+          "description": "TIRE-PRESSURE CAB FL",
+          "classification": "TIRE-PRESSURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "KPa",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "TIRE-PRESSURE-BL",
+          "id": "<YOURNAME>-DAYCAB-01.TIRE-PRESSURE-BL",
+          "description": "TIRE-PRESSURE CAB BL",
+          "classification": "TIRE-PRESSURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "KPa",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "TIRE-PRESSURE-BR",
+          "id": "<YOURNAME>-DAYCAB-01.TIRE-PRESSURE-BR",
+          "description": "TIRE-PRESSURE CAB BR",
+          "classification": "TIRE-PRESSURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "KPa",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+                {
+          "name": "FUEL-LEVEL",
+          "id": "<YOURNAME>-DAYCAB-01.FUEL-LEVEL",
+          "description": "FUEL-LEVEL",
+          "classification": "FUEL-LEVEL",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "gal",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "BR1X_1XAMP",
+          "id": "<YOURNAME>-DAYCAB-01.BR1X_1XAMP_ID",
+          "description": "AMPLITUDE",
+          "classification": "AMPLITUDE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Amps",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+         {
+          "name": "BR1Y_1XAMP",
+          "id": "<YOURNAME>-DAYCAB-01.BR1Y_1XAMP_ID",
+          "description": "AMPLITUDE",
+          "classification": "AMPLITUDE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Amps",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR2X_1XAMP",
+          "id": "<YOURNAME>-DAYCAB-01.BR2X_1XAMP_ID",
+          "description": "AMPLITUDE",
+          "classification": "AMPLITUDE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Amps",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR2Y_1XAMP",
+          "id": "<YOURNAME>-DAYCAB-01.BR2Y_1XAMP_ID",
+          "description": "AMPLITUDE",
+          "classification": "AMPLITUDE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Amps",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR3X_1XAMP",
+          "id": "<YOURNAME>-DAYCAB-01.BR3X_1XAMP_ID",
+          "description": "AMPLITUDE",
+          "classification": "AMPLITUDE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Amps",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR3Y_1XAMP",
+          "id": "<YOURNAME>-DAYCAB-01.BR3Y_1XAMP_ID",
+          "description": "AMPLITUDE",
+          "classification": "AMPLITUDE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Amps",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR1X_DIRECT",
+          "id": "<YOURNAME>-DAYCAB-01.BR1X_DIRECT_ID",
+          "description": "DIRECTION",
+          "classification": "DIRECTION",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Degree",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR1Y_DIRECT",
+          "id": "<YOURNAME>-DAYCAB-01.BR1Y_DIRECT_ID",
+          "description": "DIRECTION",
+          "classification": "DIRECTION",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Degree",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR2X_DIRECT",
+          "id": "<YOURNAME>-DAYCAB-01.BR2X_DIRECT_ID",
+          "description": "DIRECTION",
+          "classification": "DIRECTION",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Degree",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR2Y_DIRECT",
+          "id": "<YOURNAME>-DAYCAB-01.BR2Y_DIRECT_ID",
+          "description": "DIRECTION",
+          "classification": "DIRECTION",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Degree",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+         {
+          "name": "BR3X_DIRECT",
+          "id": "<YOURNAME>-DAYCAB-01.BR3X_DIRECT_ID",
+          "description": "DIRECTION",
+          "classification": "DIRECTION",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Degree",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR3Y_DIRECT",
+          "id": "<YOURNAME>-DAYCAB-01.BR3Y_DIRECT_ID",
+          "description": "DIRECTION",
+          "classification": "DIRECTION",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Degree",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+                  {
+          "name": "BR1X_1XPH",
+          "id": "<YOURNAME>-DAYCAB-01.BR1X_1XPH_ID",
+          "description": "PHASE",
+          "classification": "PHASE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Celsius",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR1Y_1XPH",
+          "id": "<YOURNAME>-DAYCAB-01.BR1Y_1XPH_ID",
+          "description": "PHASE",
+          "classification": "PHASE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Celsius",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR2X_1XPH",
+          "id": "<YOURNAME>-DAYCAB-01.BR2X_1XPH_ID",
+          "description": "PHASE",
+          "classification": "PHASE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Celsius",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR2Y_1XPH",
+          "id": "<YOURNAME>-DAYCAB-01.BR2Y_1XPH_ID",
+          "description": "PHASE",
+          "classification": "PHASE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Celsius",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+         {
+          "name": "BR3X_1XPH",
+          "id": "<YOURNAME>-DAYCAB-01.BR3X_1XPH_ID",
+          "description": "PHASE",
+          "classification": "PHASE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Celsius",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+          {
+          "name": "BR3Y_1XPH",
+          "id": "<YOURNAME>-DAYCAB-01.BR3Y_1XPH_ID",
+          "description": "PHASE",
+          "classification": "PHASE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Celsius",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "HYDRAULIC-LIFTGATE-RIGHT",
+          "id": "<YOURNAME>-DAYCAB-01.HYDRAULIC-LIFTGATE-RIGHT",
+          "description": "HYDRAULIC-LIFTGATE-RIGHT",
+          "classification": "HYDRAULIC",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "gal",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+                  {
+          "name": "HYDRAULIC-LIFTGATE-LEFT",
+          "id": "<YOURNAME>-DAYCAB-01.HYDRAULIC-LIFTGATE-LEFT",
+          "description": "HYDRAULIC-LIFTGATE-LEFT",
+          "classification": "HYDRAULIC",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "gal",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        }
+
+        ]
+        },
+    {
+      "monitoredEntity": {
+        "id": "<YOURNAME>-NIGHTSLEEPER-01",
+        "ccomClass": "ASSET"
+      },
+      "tags": [
+        {
+          "name": "COOLANTTEMP",
+          "id": "<YOURNAME>-NIGHTSLEEPER-01.COOLANTTEMP",
+          "description": "ENGINETEMP",
+          "classification": "TEMPERATURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "Fahrenheit",
+            "dataType": "Double",
+            "resolution": ""
+          }
+      },
+              {
+          "name": "TIRE-PRESSURE-FR",
+          "id": "<YOURNAME>-NIGHTSLEEPER-01.TIRE-PRESSURE-FR",
+          "description": "TIRE-PRESSURE CAB FR",
+          "classification": "TIRE-PRESSURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "KPa",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "TIRE-PRESSURE-FL",
+          "id": "<YOURNAME>-NIGHTSLEEPER-01.TIRE-PRESSURE-FL",
+          "description": "TIRE-PRESSURE CAB FL",
+          "classification": "TIRE-PRESSURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "KPa",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "TIRE-PRESSURE-BL",
+          "id": "<YOURNAME>-NIGHTSLEEPER-01.TIRE-PRESSURE-BL",
+          "description": "TIRE-PRESSURE CAB BL",
+          "classification": "TIRE-PRESSURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "KPa",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "TIRE-PRESSURE-BR",
+          "id": "<YOURNAME>-NIGHTSLEEPER-01.TIRE-PRESSURE-BR",
+          "description": "TIRE-PRESSURE CAB BR",
+          "classification": "TIRE-PRESSURE",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "KPa",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+                {
+          "name": "FUEL-LEVEL",
+          "id": "<YOURNAME>-NIGHTSLEEPER-01.FUEL-LEVEL",
+          "description": "FUEL-LEVEL",
+          "classification": "FUEL-LEVEL",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "gal",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+        {
+          "name": "HYDRAULIC-LIFTGATE-RIGHT",
+          "id": "<YOURNAME>-NIGHTSLEEPER-01.HYDRAULIC-LIFTGATE-RIGHT",
+          "description": "HYDRAULIC-LIFTGATE-RIGHT",
+          "classification": "HYDRAULIC",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "gal",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        },
+                  {
+          "name": "HYDRAULIC-LIFTGATE-LEFT",
+          "id": "<YOURNAME>-NIGHTSLEEPER-01.HYDRAULIC-LIFTGATE-LEFT",
+          "description": "HYDRAULIC-LIFTGATE-LEFT",
+          "classification": "HYDRAULIC",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "gal",
+            "dataType": "Double",
+            "resolution": ""
+          }
+        }
+
+    ]
+
+}
+],
+"groups": [
+    {
+      "id": "<YOURNAME>GROUP",
+      "name": "<YOURNAME>",
+      "description": "<YOURNAME>",
+      "ccomClass": "GROUP",
+      "associatedEntityCcomClass": "ASSET",
+      "properties": [
+        {
+          "id": "enginetype",
+          "value": [
+            "V12"
+          ],
+          "type": "string"
+        }
+      ],
+      "associatedEntityIds": [
+        "<YOURNAME>-NIGHTSLEEPER-01"
+      ]
+    }
+  ]
+}
